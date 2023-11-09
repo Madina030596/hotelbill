@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="flex">
+        <h1 class="flex__title">Выбери отдых для себя</h1>
+        <button class="flex__btn" id="callback-button">Рассчитать</button>
+    </div>
+
+    <div class="container">
+        <div class="container__one container__item">
+            <h3 class="container__text">Отдых в горах</h3>
+        </div>
+
+        <div class="container__two container__item container_selected">
+            <h3 class="container__text">Отдых в лесу</h3>
+        </div>
+
+        <div class="container__three container__item">
+            <h3 class="container__text">Отдых у океана</h3>
+        </div>
+    </div>
+
+    <div class="flex">
+        <h3 class="flex__heading">Успейте забронировать тур по приятной цене!</h3>
+        <p class="flex__subtitle">До окончания акции:</p>
+    </div>
+
+    <div class="row">
+        <div class="block">
+            <div class="flex">
+                <p class="block__item" id="day"></p>
+                <p class="block__text" id="daysName">Дней</p>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="flex">
+                <p class="block__item" id="hours"></p>
+                <p class="block__text" id="hoursName">Часов</p>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="flex">
+                <p class="block__item" id="minutes"></p>
+                <p class="block__text" id="minutesName">Минут</p>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="flex">
+                <p class="block__item" id="seconds"></p>
+                <p class="block__text" id="secondsName">Секунд</p>
+            </div>
+        </div>
+    </div>
+
+<!-- модальное окно -->
+    <div class="modal" id="modal">
+        <div class="modal__content">
+            <div class="modal__close-button">+</div>
+        <!-- Контент модального окна -->
+            <div class="modal__container">
+                <form class="flex">
+                    <h2 class="modal__title">Давайте рассчитаем Ваш тур</h2>
+            
+                    <p class="modal__subtitle">Выберите направление</p>
+                    <select class="modal__item" id="place">
+                        <option value="2500">Горы</option>
+                        <option value="2000">Лес</option>
+                        <option value="2800">Океан</option>
+                    </select>
+        
+                    <p class="modal__subtitle">Выберите класс отеля</p>
+                    <select class="modal__item"  id="hotel">
+                        <option value="1500">5 звезд</option>
+                        <option value="1200">4 звезды</option>
+                        <option value="1000">3 звезды</option>
+                        <option value="800">2 звезды</option>
+                    </select>
+        
+                    <p class="modal__subtitle">Еда и напитки</p>
+                    <select class="modal__item"  id="food">
+                        <option value="500">All inclusive</option>
+                        <option value="150">Только завтрак</option>
+                        <option value="250">Завтрак и обед</option>
+                    </select>
+
+                    <p class="modal__subtitle">Количество дней</p>
+                    <input type="number" class="modal__item"  id="days" placeholder="дни" min="0">
+                    
+                    <p class="modal__subtitle">Количество человек</p>
+                    <input type="number" class="modal__item" id="people" placeholder="люди" min="0">
+
+                    <span class="modal__checkbox">
+                        <input type="checkbox" id="check" value="2000">
+                        <label for="check">Добавить медицинскую страховку</label>
+                    </span>
+
+                    <button id="calculate" class="modal__btn">Рассчитать</button>
+                </form>
+        
+                <div class="column" id="showBill">
+                    <div class="modal__box">
+                        <span class="modal__text">Общая сумма:</span>
+                        <span id="sumCommon" class="modal__text"></span>
+                        <span class="modal__text">руб.</span>
+                    </div>
+        
+                    <div class="modal__box">
+                        <span  class="modal__text">Сумма на человека:</span>
+                        <span id="sumPerson" class="modal__text"></span>
+                        <span class="modal__text">руб.</span>
+                    </div>
+                </div> 
+        
+                <button id="reset" class="modal__btn">Очистить</button>
+            </div>
+        </div>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+</html>
